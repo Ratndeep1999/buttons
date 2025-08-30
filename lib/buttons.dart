@@ -27,7 +27,9 @@ class Buttons extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 debugPrint('ElevatedButton');
+                // null : disable state
               },
+              // If true, button gets focus automatically when screen loads.
               autofocus: true,
               // in style we also use ButtonStyle()
               style: ElevatedButton.styleFrom(
@@ -41,7 +43,28 @@ class Buttons extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                 ),
                 side: BorderSide(width: 3, color: Colors.orangeAccent),
+                // splash enable or disable
+                // splashFactory: NoSplash.splashFactory
+                // this is basically padding vertically and horizontally
+                // visualDensity: VisualDensity(horizontal: 1.5, vertical: 2.5)
+                textStyle: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2,
+                ),
               ),
+              // call whenever focus state change
+              onFocusChange: (isFocused) {
+                if (isFocused) {
+                  debugPrint("Button is focused!");
+                } else {
+                  debugPrint("Button lost focus!");
+                }
+              },
+              // for keyboard focus control
+              focusNode: FocusNode(),
+              // Controls how content is clipped inside the button (e.g. Clip.antiAlias).
+              clipBehavior: Clip.antiAlias,
               child: Text('ElevatedButton'),
             ),
           ],
