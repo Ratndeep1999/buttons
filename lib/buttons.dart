@@ -7,12 +7,12 @@ class Buttons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              ElevatedButton(onPressed: (){}, child: Text('ElevatedButton'))
-            ],
-          )
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ElevatedButton(onPressed: () {}, child: Text('ElevatedButton')),
+          ],
+        ),
       ),
     );
   }
