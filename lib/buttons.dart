@@ -37,64 +37,73 @@ class Buttons extends StatelessWidget {
               ),
 
               /// TextButton
-              TextButton(
-                // 1. Callback when tap on button
-                onPressed: () {
-                  HapticFeedback.heavyImpact(); // force vibration on press
-                  debugPrint('Text Button');
-                },
-                // 2. Callback when longPressed on button
-                onLongPress: () {
-                  debugPrint('Long Press..!');
-                },
-                // 3. Callback when mouse enters or leaves the button area (desktop/web).
-                onHover: (isHovering) {
-                  debugPrint(isHovering ? "Hovering" : "Not Hovering");
-                },
-                // 4. Callback when the button gains or loses focus.
-                onFocusChange: (isFocused) {
-                  debugPrint(isFocused ? "Focused" : "Unfocused");
-                },
-                // For keyboard focus control
-                focusNode: FocusNode(),
-                // If true, button gets focus automatically on screen load.
-                autofocus: true,
-                // Style of text button
-                style: TextButton.styleFrom(
-                  // It remover background color
-                  backgroundColor: Colors.transparent,
-                  // It remover extra surface of button
-                  padding: EdgeInsets.all(0.0),
-                  // It remover border radius
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0.0),
-                  ),
-                  // It also remove extra surface of button
-                  visualDensity: VisualDensity(vertical: 0.0, horizontal: 0.0),
-                  // It gives radius (clickable) to the button
-                  //fixedSize: Size.fromRadius(50),
-                  disabledMouseCursor: SystemMouseCursors.forbidden,
-                  // 🚫 cursor
-                  enabledMouseCursor: SystemMouseCursors.progress,
-                  // like a click sound on web/desktop or haptic vibration on mobile
-                  enableFeedback: true,
-                  // ❌ no haptic / click sound
-                  // controls the color that appears on a button when it is interacted
-                  overlayColor: Colors.redAccent,
-                  // If you want slower/smoother animations for hover/focus effects on desktop/web.
-                  animationDuration: Duration(seconds: 5),
-                  textStyle: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.black45,
-                  ),
-                ),
-                child: Text('Text Button'),
+              buildTextButton(),
+
+              /// textButton with Icon
+              TextButton.icon(
+                onPressed: () {},
+                label: Text('Text icon Button'),
+                icon: Icon(Icons.ads_click),
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  TextButton buildTextButton() {
+    return TextButton(
+      // 1. Callback when tap on button
+      onPressed: () {
+        HapticFeedback.heavyImpact(); // force vibration on press
+        debugPrint('Text Button');
+      },
+      // 2. Callback when longPressed on button
+      onLongPress: () {
+        debugPrint('Long Press..!');
+      },
+      // 3. Callback when mouse enters or leaves the button area (desktop/web).
+      onHover: (isHovering) {
+        debugPrint(isHovering ? "Hovering" : "Not Hovering");
+      },
+      // 4. Callback when the button gains or loses focus.
+      onFocusChange: (isFocused) {
+        debugPrint(isFocused ? "Focused" : "Unfocused");
+      },
+      // For keyboard focus control
+      focusNode: FocusNode(),
+      // If true, button gets focus automatically on screen load.
+      autofocus: true,
+      // Style of text button
+      style: TextButton.styleFrom(
+        // It remover background color
+        backgroundColor: Colors.transparent,
+        // It remover extra surface of button
+        padding: EdgeInsets.all(0.0),
+        // It remover border radius
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0.0)),
+        // It also remove extra surface of button
+        visualDensity: VisualDensity(vertical: 0.0, horizontal: 0.0),
+        // It gives radius (clickable) to the button
+        //fixedSize: Size.fromRadius(50),
+        disabledMouseCursor: SystemMouseCursors.forbidden,
+        // 🚫 cursor
+        enabledMouseCursor: SystemMouseCursors.progress,
+        // like a click sound on web/desktop or haptic vibration on mobile
+        enableFeedback: true,
+        // ❌ no haptic / click sound
+        // controls the color that appears on a button when it is interacted
+        overlayColor: Colors.redAccent,
+        // If you want slower/smoother animations for hover/focus effects on desktop/web.
+        animationDuration: Duration(seconds: 5),
+        textStyle: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.normal,
+          color: Colors.black45,
+        ),
+      ),
+      child: Text('Text Button'),
     );
   }
 
