@@ -22,8 +22,28 @@ class Buttons extends StatelessWidget {
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: () {}, child: Text('ElevatedButton')),
+            ElevatedButton(
+              onPressed: () {
+                debugPrint('ElevatedButton');
+              },
+              autofocus: true,
+              // in style we also use ButtonStyle()
+              style: ElevatedButton.styleFrom(
+                //alignment: Alignment.center,
+                backgroundColor: Colors.deepPurple.shade300,
+                foregroundColor: Colors.white,
+                shadowColor: Colors.black,
+                elevation: 15,
+                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                side: BorderSide(width: 3, color: Colors.orangeAccent),
+              ),
+              child: Text('ElevatedButton'),
+            ),
           ],
         ),
       ),
