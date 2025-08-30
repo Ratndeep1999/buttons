@@ -47,33 +47,70 @@ class Buttons extends StatelessWidget {
               ),
 
               /// OutlinedButton
-              OutlinedButton(
-                  onPressed: (){
-                    debugPrint('OutlinedButton');
-                  },
-                  onLongPress: (){
-                    debugPrint('Long Pressed..!');
-                  },
-                  onHover: (isHover){
-                    debugPrint(isHover ? 'Hover' : 'Hover Remover');
-                  },
-                  onFocusChange: (isFocused){
-                    debugPrint(isFocused ? 'Focused' : 'Unfocused');
-                  },
-                  child: Text('OutlinedButton')
-              ),
+              buildOutlinedButton(),
 
               /// Outlined with icon
               OutlinedButton.icon(
-                onPressed: (){},
+                onPressed: () {},
                 label: Text('Outlined icon Button'),
                 icon: Icon(Icons.ads_click),
-              )
+              ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  OutlinedButton buildOutlinedButton() {
+    return OutlinedButton(
+              onPressed: () {
+                debugPrint('OutlinedButton');
+              },
+              onLongPress: () {
+                debugPrint('Long Pressed..!');
+              },
+              onHover: (isHover) {
+                debugPrint(isHover ? 'Hover' : 'Hover Remover');
+              },
+              onFocusChange: (isFocused) {
+                debugPrint(isFocused ? 'Focused' : 'Unfocused');
+              },
+              // keyboard focus control
+              focusNode: FocusNode(),
+              // button gets focus automatically on screen load
+              autofocus: true,
+              clipBehavior: Clip.antiAlias,
+              style: OutlinedButton.styleFrom(
+                backgroundColor: Colors.transparent,
+                // This never effect border radios
+                side: BorderSide(color: Colors.orangeAccent, width: 3),
+                // This makes border Rectangular
+                shape: RoundedRectangleBorder(),
+                foregroundColor: Colors.deepOrange,
+                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
+                enableFeedback: true,
+                overlayColor: Colors.black,
+                shadowColor: Colors.grey,
+                elevation: 30.0,
+                enabledMouseCursor: MouseCursor.defer,  // uncontrolled also
+                surfaceTintColor: Colors.orange.shade700,
+                // ?
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                // maximumSize: ,
+                // minimumSize: ,
+                // I already specify splash color
+                // splashFactory: ,
+                // It gives Fixed size
+                // fixedSize: Size.square(5.0),
+                textStyle: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: 2.0,
+                ),
+              ),
+              child: Text('OutlinedButton'),
+            );
   }
 
   TextButton buildTextButton() {
