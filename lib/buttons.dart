@@ -59,7 +59,7 @@ class Buttons extends StatelessWidget {
       // 1. Callback when tap on button
       onPressed: () {
         HapticFeedback.heavyImpact(); // force vibration on press
-        debugPrint('Text Button');
+        debugPrint('TextButton');
       },
       // 2. Callback when longPressed on button
       onLongPress: () {
