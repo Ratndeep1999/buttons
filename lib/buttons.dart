@@ -20,50 +20,56 @@ class Buttons extends StatelessWidget {
         centerTitle: true,
       ),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            /// ElevatedButton
-            buildElevatedButton(),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              /// ElevatedButton
+              buildElevatedButton(),
 
-            /// Elevated with icon
-            ElevatedButton.icon(
-              onPressed: () {},
-              label: Text('Elevated icon Button'),
-              icon: Icon(Icons.ads_click),
-            ),
-
-            /// TextButton
-            TextButton(
-              // 1. Callback when tap on button
-              onPressed: () {
-                debugPrint('Text Button');
-              },
-              // 2. Callback when longPressed on button
-              onLongPress: () {
-                debugPrint('Long Press..!');
-              },
-              // 3. Callback when mouse enters or leaves the button area (desktop/web).
-              onHover: (isHovering) {
-                debugPrint(isHovering ? "Hovering" : "Not Hovering");
-              },
-              // 4. Callback when the button gains or loses focus.
-              onFocusChange: (isFocused) {
-                debugPrint(isFocused ? "Focused" : "Unfocused");
-              },
-              // For keyboard focus control
-              focusNode: FocusNode(),
-              // If true, button gets focus automatically on screen load.
-              autofocus: true,
-              // Style of text button
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.transparent,
-                textStyle: TextStyle(fontSize: 20),
+              /// Elevated with icon
+              ElevatedButton.icon(
+                onPressed: () {},
+                label: Text('Elevated icon Button'),
+                icon: Icon(Icons.ads_click),
               ),
-              child: Text('Text Button'),
-            ),
-          ],
+
+              /// TextButton
+              TextButton(
+                // 1. Callback when tap on button
+                onPressed: () {
+                  debugPrint('Text Button');
+                },
+                // 2. Callback when longPressed on button
+                onLongPress: () {
+                  debugPrint('Long Press..!');
+                },
+                // 3. Callback when mouse enters or leaves the button area (desktop/web).
+                onHover: (isHovering) {
+                  debugPrint(isHovering ? "Hovering" : "Not Hovering");
+                },
+                // 4. Callback when the button gains or loses focus.
+                onFocusChange: (isFocused) {
+                  debugPrint(isFocused ? "Focused" : "Unfocused");
+                },
+                // For keyboard focus control
+                focusNode: FocusNode(),
+                // If true, button gets focus automatically on screen load.
+                autofocus: true,
+                // Style of text button
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  textStyle: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.black45,
+                  ),
+                ),
+                child: Text('Text Button'),
+              ),
+            ],
+          ),
         ),
       ),
     );
