@@ -22,7 +22,7 @@ class Buttons extends StatelessWidget {
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             /// ElevatedButton
             buildElevatedButton(),
@@ -30,12 +30,19 @@ class Buttons extends StatelessWidget {
             /// Elevated with icon
             ElevatedButton.icon(
               onPressed: () {},
-              label: Text('Elevated icon'),
+              label: Text('Elevated icon Button'),
               icon: Icon(Icons.ads_click),
             ),
 
             /// TextButton
-            TextButton(onPressed: () {}, child: Text('Text Button')),
+            TextButton(
+                onPressed: () {
+                  debugPrint('Text Button');
+                },
+                onLongPress: () {
+                  debugPrint('Long Press..!');
+                },
+                child: Text('Text Button')),
           ],
         ),
       ),
