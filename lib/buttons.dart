@@ -61,6 +61,13 @@ class Buttons extends StatelessWidget {
                     debugPrint(isFocused ? 'Focused' : 'Unfocused');
                   },
                   child: Text('OutlinedButton')
+              ),
+
+              // Outlined with icon
+              OutlinedButton.icon(
+                onPressed: (){},
+                label: Text('Outlined icon Button'),
+                icon: Icon(Icons.ads_click),
               )
             ],
           ),
