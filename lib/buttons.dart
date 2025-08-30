@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Buttons extends StatelessWidget {
   const Buttons({super.key});
@@ -39,6 +40,7 @@ class Buttons extends StatelessWidget {
               TextButton(
                 // 1. Callback when tap on button
                 onPressed: () {
+                  HapticFeedback.heavyImpact(); // force vibration on press
                   debugPrint('Text Button');
                 },
                 // 2. Callback when longPressed on button
@@ -73,7 +75,7 @@ class Buttons extends StatelessWidget {
                   //fixedSize: Size.fromRadius(50),
                   disabledMouseCursor: SystemMouseCursors.forbidden, // 🚫 cursor
                   enabledMouseCursor: SystemMouseCursors.progress,
-                  // Controls whether the button provides sound or haptic feedback when pressed.
+                  // like a click sound on web/desktop or haptic vibration on mobile
                   enableFeedback: true, // ❌ no haptic / click sound
                   // If you want slower/smoother animations for hover/focus effects on desktop/web.
                   animationDuration: Duration(seconds: 5),
