@@ -34,6 +34,9 @@ class Buttons extends StatelessWidget {
                 onPressed: () {},
                 label: Text('Elevated icon Button'),
                 icon: Icon(Icons.ads_click),
+                style: OutlinedButton.styleFrom(
+                  enabledMouseCursor: SystemMouseCursors.forbidden, // text),
+                ),
               ),
 
               /// TextButton
@@ -44,6 +47,9 @@ class Buttons extends StatelessWidget {
                 onPressed: () {},
                 label: Text('Text icon Button'),
                 icon: Icon(Icons.ads_click),
+                style: OutlinedButton.styleFrom(
+                  enabledMouseCursor: SystemMouseCursors.allScroll, // text),
+                ),
               ),
 
               /// OutlinedButton
@@ -54,6 +60,9 @@ class Buttons extends StatelessWidget {
                 onPressed: () {},
                 label: Text('Outlined icon Button'),
                 icon: Icon(Icons.ads_click),
+                style: OutlinedButton.styleFrom(
+                  enabledMouseCursor: SystemMouseCursors.text, // text),
+                ),
               ),
             ],
           ),
@@ -93,7 +102,7 @@ class Buttons extends StatelessWidget {
                 overlayColor: Colors.black,
                 shadowColor: Colors.grey,
                 elevation: 30.0,
-                enabledMouseCursor: MouseCursor.defer,  // uncontrolled also
+                enabledMouseCursor: SystemMouseCursors.zoomIn,  // text
                 surfaceTintColor: Colors.orange.shade700,
                 // ?
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -150,7 +159,7 @@ class Buttons extends StatelessWidget {
         //fixedSize: Size.fromRadius(50),
         disabledMouseCursor: SystemMouseCursors.forbidden,
         // 🚫 cursor
-        enabledMouseCursor: SystemMouseCursors.progress,
+        enabledMouseCursor: SystemMouseCursors.wait,
         // like a click sound on web/desktop or haptic vibration on mobile
         enableFeedback: true,
         // ❌ no haptic / click sound
