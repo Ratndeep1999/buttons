@@ -63,7 +63,7 @@ class Buttons extends StatelessWidget {
                   child: Text('OutlinedButton')
               ),
 
-              // Outlined with icon
+              /// Outlined with icon
               OutlinedButton.icon(
                 onPressed: (){},
                 label: Text('Outlined icon Button'),
