@@ -53,8 +53,8 @@ class Buttons extends StatelessWidget {
                   letterSpacing: 2,
                 ),
                 // only for web/desktop
-                enabledMouseCursor: SystemMouseCursors.grab,    // when enabled
-                disabledMouseCursor: SystemMouseCursors.forbidden, // when disabled
+                // enabledMouseCursor: SystemMouseCursors.grab,    // when enabled
+                // disabledMouseCursor: SystemMouseCursors.forbidden, // when disabled
               ),
               // call whenever focus state change
               onFocusChange: (isFocused) {
