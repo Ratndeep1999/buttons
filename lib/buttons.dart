@@ -11,7 +11,7 @@ class Buttons extends StatelessWidget {
           'Buttons',
           style: TextStyle(
             fontSize: 30,
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w400,
             letterSpacing: 5,
           ),
         ),
