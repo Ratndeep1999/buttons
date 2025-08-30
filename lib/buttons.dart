@@ -6,7 +6,19 @@ class Buttons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Buttons', ), backgroundColor: Colors.tealAccent,),
+      appBar: AppBar(
+        title: Text(
+          'Buttons',
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.w500,
+            letterSpacing: 5,
+          ),
+        ),
+        backgroundColor: Colors.tealAccent.shade100,
+        elevation: 2.0,
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
