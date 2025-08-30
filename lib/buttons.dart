@@ -46,7 +46,22 @@ class Buttons extends StatelessWidget {
                 icon: Icon(Icons.ads_click),
               ),
 
-
+              /// OutlinedButton
+              OutlinedButton(
+                  onPressed: (){
+                    debugPrint('OutlinedButton');
+                  },
+                  onLongPress: (){
+                    debugPrint('Long Pressed..!');
+                  },
+                  onHover: (isHover){
+                    debugPrint(isHover ? 'Hover' : 'Hover Remover');
+                  },
+                  onFocusChange: (isFocused){
+                    debugPrint(isFocused ? 'Focused' : 'Unfocused');
+                  },
+                  child: Text('OutlinedButton')
+              )
             ],
           ),
         ),
