@@ -71,11 +71,12 @@ class Buttons extends StatelessWidget {
                   visualDensity: VisualDensity(vertical: 0.0, horizontal: 0.0),
                   // It gives radius (clickable) to the button
                   //fixedSize: Size.fromRadius(50),
-                  // disabledMouseCursor: ,
-                  // enabledMouseCursor: ,
-                  // enableFeedback: ,
+                  disabledMouseCursor: SystemMouseCursors.forbidden, // 🚫 cursor
+                  enabledMouseCursor: SystemMouseCursors.progress,
+                  // Controls whether the button provides sound or haptic feedback when pressed.
+                  enableFeedback: true, // ❌ no haptic / click sound
                   // If you want slower/smoother animations for hover/focus effects on desktop/web.
-                  animationDuration: Duration(seconds: 2),
+                  animationDuration: Duration(seconds: 5),
                   textStyle: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
