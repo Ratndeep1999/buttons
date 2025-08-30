@@ -59,7 +59,23 @@ class Buttons extends StatelessWidget {
                 autofocus: true,
                 // Style of text button
                 style: TextButton.styleFrom(
+                  // It remover background color
                   backgroundColor: Colors.transparent,
+                  // It remover extra surface of button
+                  padding: EdgeInsets.all(0.0),
+                  // It remover border radius
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0.0),
+                  ),
+                  // It also remove extra surface of button
+                  visualDensity: VisualDensity(vertical: 0.0, horizontal: 0.0),
+                  // It gives radius (clickable) to the button
+                  //fixedSize: Size.fromRadius(50),
+                  // disabledMouseCursor: ,
+                  // enabledMouseCursor: ,
+                  // enableFeedback: ,
+                  // If you want slower/smoother animations for hover/focus effects on desktop/web.
+                  animationDuration: Duration(seconds: 2),
                   textStyle: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
