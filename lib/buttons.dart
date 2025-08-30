@@ -77,6 +77,8 @@ class Buttons extends StatelessWidget {
                   enabledMouseCursor: SystemMouseCursors.progress,
                   // like a click sound on web/desktop or haptic vibration on mobile
                   enableFeedback: true, // ❌ no haptic / click sound
+                  // controls the color that appears on a button when it is interacted
+                  overlayColor: Colors.redAccent,
                   // If you want slower/smoother animations for hover/focus effects on desktop/web.
                   animationDuration: Duration(seconds: 5),
                   textStyle: TextStyle(
@@ -122,8 +124,8 @@ class Buttons extends StatelessWidget {
           letterSpacing: 2,
         ),
         // only for web/desktop
-        // enabledMouseCursor: SystemMouseCursors.grab,    // when enabled
-        // disabledMouseCursor: SystemMouseCursors.forbidden, // when disabled
+        enabledMouseCursor: SystemMouseCursors.grab,    // when enabled
+        disabledMouseCursor: SystemMouseCursors.forbidden, // when disabled
       ),
       // call whenever focus state change
       onFocusChange: (isFocused) {
