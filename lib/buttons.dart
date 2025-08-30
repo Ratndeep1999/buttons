@@ -73,10 +73,12 @@ class Buttons extends StatelessWidget {
                   visualDensity: VisualDensity(vertical: 0.0, horizontal: 0.0),
                   // It gives radius (clickable) to the button
                   //fixedSize: Size.fromRadius(50),
-                  disabledMouseCursor: SystemMouseCursors.forbidden, // 🚫 cursor
+                  disabledMouseCursor: SystemMouseCursors.forbidden,
+                  // 🚫 cursor
                   enabledMouseCursor: SystemMouseCursors.progress,
                   // like a click sound on web/desktop or haptic vibration on mobile
-                  enableFeedback: true, // ❌ no haptic / click sound
+                  enableFeedback: true,
+                  // ❌ no haptic / click sound
                   // controls the color that appears on a button when it is interacted
                   overlayColor: Colors.redAccent,
                   // If you want slower/smoother animations for hover/focus effects on desktop/web.
@@ -98,12 +100,33 @@ class Buttons extends StatelessWidget {
 
   ElevatedButton buildElevatedButton() {
     return ElevatedButton(
+      // 1. Callback when tap on button
       onPressed: () {
         debugPrint('ElevatedButton');
         // null : disable state
       },
+      // 2. Callback when longPressed on button
+      onLongPress: () {
+        debugPrint('Long Pressed');
+      },
+      // 3. Call whenever focus state change
+      onFocusChange: (isFocused) {
+        if (isFocused) {
+          debugPrint("Button is focused!");
+        } else {
+          debugPrint("Button lost focus!");
+        }
+      },
+      // 4. Called when the mouse pointer enters or exits the button region (desktop/web).
+      onHover: (isHovering) {
+        debugPrint(isHovering ? 'Hovering' : 'Remove Hovering');
+      },
       // If true, button gets focus automatically when screen loads.
       autofocus: true,
+      // for keyboard focus control
+      focusNode: FocusNode(),
+      // Controls how content is clipped inside the button (e.g. Clip.antiAlias).
+      clipBehavior: Clip.antiAlias,
       // in style we also use ButtonStyle()
       style: ElevatedButton.styleFrom(
         //alignment: Alignment.center,
@@ -124,28 +147,10 @@ class Buttons extends StatelessWidget {
           letterSpacing: 2,
         ),
         // only for web/desktop
-        enabledMouseCursor: SystemMouseCursors.grab,    // when enabled
+        enabledMouseCursor: SystemMouseCursors.grab,
+        // when enabled
         disabledMouseCursor: SystemMouseCursors.forbidden, // when disabled
       ),
-      // call whenever focus state change
-      onFocusChange: (isFocused) {
-        if (isFocused) {
-          debugPrint("Button is focused!");
-        } else {
-          debugPrint("Button lost focus!");
-        }
-      },
-      // Called when the mouse pointer enters or exits the button region (desktop/web).
-      onHover: (isHovering) {
-        debugPrint(isHovering ? 'Hovering' : 'Remove Hovering');
-      },
-      onLongPress: () {
-        debugPrint('Long Pressed');
-      },
-      // for keyboard focus control
-      focusNode: FocusNode(),
-      // Controls how content is clipped inside the button (e.g. Clip.antiAlias).
-      clipBehavior: Clip.antiAlias,
       child: Text('ElevatedButton'),
     );
   }
