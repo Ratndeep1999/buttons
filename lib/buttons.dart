@@ -36,13 +36,29 @@ class Buttons extends StatelessWidget {
 
             /// TextButton
             TextButton(
-                onPressed: () {
-                  debugPrint('Text Button');
-                },
-                onLongPress: () {
-                  debugPrint('Long Press..!');
-                },
-                child: Text('Text Button')),
+              // Callback when tap on button
+              onPressed: () {
+                debugPrint('Text Button');
+              },
+              // Callback when longPressed on button
+              onLongPress: () {
+                debugPrint('Long Press..!');
+              },
+              style: TextButton.styleFrom(backgroundColor: Colors.transparent,),
+              // for keyboard focus control
+              focusNode: FocusNode(),
+              // If true, button gets focus automatically on screen load.
+              autofocus: true,
+              // Callback when mouse enters or leaves the button area (desktop/web).
+              onHover: (isHovering) {
+                debugPrint(isHovering ? "Hovering" : "Not Hovering");
+              },
+              // Callback when the button gains or loses focus.
+              onFocusChange: (isFocused) {
+                debugPrint(isFocused ? "Focused" : "Unfocused");
+              },
+              child: Text('Text Button'),
+            ),
           ],
         ),
       ),
