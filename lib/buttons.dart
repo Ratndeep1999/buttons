@@ -52,6 +52,9 @@ class Buttons extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2,
                 ),
+                // only for web/desktop
+                enabledMouseCursor: SystemMouseCursors.grab,    // when enabled
+                disabledMouseCursor: SystemMouseCursors.forbidden, // when disabled
               ),
               // call whenever focus state change
               onFocusChange: (isFocused) {
@@ -68,6 +71,7 @@ class Buttons extends StatelessWidget {
               onLongPress: (){
                 debugPrint('Long Pressed');
               },
+
               // for keyboard focus control
               focusNode: FocusNode(),
               // Controls how content is clipped inside the button (e.g. Clip.antiAlias).
