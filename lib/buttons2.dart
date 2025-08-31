@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Buttons2 extends StatelessWidget {
   const Buttons2({super.key});
@@ -16,8 +17,20 @@ class Buttons2 extends StatelessWidget {
               /// IconButton
               IconButton(
                 onPressed: () {
+                  HapticFeedback.heavyImpact(); // force vibrato on press
                   debugPrint('Liked..!');
                 },
+                onLongPress: (){
+                  debugPrint('Longe Pressed..!');
+                },
+                onHover: (isHover){
+                  debugPrint(isHover ? 'Hovering' : 'Not Hovering');
+                },
+                autofocus: true,
+                //focusNode: FocusNode(),
+                // This can easily increase or decrease radios of splash
+                padding: EdgeInsets.all(5.0),
+                enableFeedback: true,
                 icon: Icon(
                   Icons.favorite,
                   color: Colors.red,
