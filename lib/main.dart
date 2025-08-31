@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'buttons.dart';
+import 'buttons2.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
-      home: Buttons(),
+      home: Buttons2(),
     );
   }
 }
