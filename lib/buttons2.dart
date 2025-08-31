@@ -71,13 +71,15 @@ class _Buttons2State extends State<Buttons2> {
                     },
                     icon: Icon(Icons.thumb_up),
                     tooltip: _thumbLiked ? 'Liked' : 'Click',
-                    color: _thumbLiked ? Colors.blue : Colors.black26,
+                    color: _thumbLiked
+                        ? Colors.purple.shade500
+                        : Colors.black26,
                     splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     hoverColor: Colors.transparent,
                     iconSize: 40,
                     style: IconButton.styleFrom(
-                      side: BorderSide(color: Colors.purple.shade100, width: 3),
+                      side: BorderSide(color: Colors.purple.shade300, width: 3),
                       padding: EdgeInsets.all(16.0),
                       backgroundColor: _thumbLiked
                           ? Colors.purple.withOpacity(0.2)
