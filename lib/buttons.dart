@@ -1,8 +1,7 @@
+import 'package:buttons/sliding_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:slide_to_act/slide_to_act.dart';
-
-import 'buttons2.dart';
 
 class Buttons extends StatelessWidget {
   const Buttons({super.key});
@@ -29,8 +28,9 @@ class Buttons extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+
               /// ElevatedButton
-              buildElevatedButton(),
+              buildElevatedButton(context),
 
               /// Elevated with icon
               ElevatedButton.icon(
@@ -71,9 +71,12 @@ class Buttons extends StatelessWidget {
               /// Swipe Button using Package
               // slide_to_act: ^2.0.2
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 10,
+                ),
                 child: SlideAction(
-                  text: "Go To SecondScreen",
+                  text: "Go To Sliding Button Screen",
                   textStyle: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -91,7 +94,7 @@ class Buttons extends StatelessWidget {
                     // Navigate after swipe
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Buttons2()),
+                      MaterialPageRoute(builder: (context) => SlidingButtons()),
                     );
                     return null;
                   },
@@ -211,10 +214,16 @@ class Buttons extends StatelessWidget {
     );
   }
 
-  ElevatedButton buildElevatedButton() {
+  ElevatedButton buildElevatedButton(context) {
     return ElevatedButton(
       // 1. Callback when tap on button
       onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => Buttons(),
+          ),
+        );
+
         debugPrint('ElevatedButton');
         // null : disable state
       },
