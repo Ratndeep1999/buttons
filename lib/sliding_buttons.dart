@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:slide_to_confirm/slide_to_confirm.dart';
 import 'package:slider_button/slider_button.dart';
 import 'package:swipeable_button_view/swipeable_button_view.dart';
 import 'buttons2.dart';
@@ -49,7 +50,7 @@ class _SlidingButtonsState extends State<SlidingButtons> {
                     color: Colors.white,
                   ),
                 ),
-                icon: Icon(Icons.shopping_cart, color: Colors.red, size: 30,),
+                icon: Icon(Icons.shopping_cart, color: Colors.red, size: 30),
                 backgroundColor: Colors.red,
                 buttonColor: Colors.white,
                 highlightedColor: Colors.black12,
@@ -70,6 +71,28 @@ class _SlidingButtonsState extends State<SlidingButtons> {
                   });
                 },
                 onFinish: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Buttons2()),
+                  );
+                },
+              ),
+
+              /// slide_to_confirm
+              // For Onboarding screen
+              ConfirmationSlider(
+                text: "Slide to confirm",
+                textStyle: TextStyle(color: Colors.white),
+                backgroundColor: Colors.green,
+                foregroundColor: Colors.white,
+                backgroundColorEnd: Colors.red,
+                iconColor: Colors.green,
+                sliderButtonContent: Icon(
+                  Icons.arrow_right,
+                  color: Colors.green,
+                ),
+                stickToEnd: false,
+                onConfirmation: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Buttons2()),
