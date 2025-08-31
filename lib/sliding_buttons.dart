@@ -49,8 +49,8 @@ class _SlidingButtonsState extends State<SlidingButtons> {
                     color: Colors.white,
                   ),
                 ),
-                icon: Icon(Icons.shopping_cart, color: Colors.green),
-                backgroundColor: Colors.green,
+                icon: Icon(Icons.shopping_cart, color: Colors.red, size: 30,),
+                backgroundColor: Colors.red,
                 buttonColor: Colors.white,
                 highlightedColor: Colors.black12,
               ),
@@ -62,8 +62,10 @@ class _SlidingButtonsState extends State<SlidingButtons> {
                 activeColor: Colors.green,
                 isFinished: isFinished,
                 onWaitingProcess: () {
-                  Future.delayed(Duration(seconds: 1), () {
-                    isFinished = true;
+                  Future.delayed(Duration(seconds: 2), () {
+                    setState(() {
+                      isFinished = true;
+                    });
                   });
                 },
                 onFinish: () {
