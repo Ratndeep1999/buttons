@@ -147,6 +147,13 @@ class _Buttons2State extends State<Buttons2> {
                     padding: EdgeInsets.all(16.0),
                     // Defines cursor style on hover (desktop/web).
                     mouseCursor: SystemMouseCursors.click,
+                    // For keyboard navigation & accessibility
+                    focusNode: FocusNode(),
+                    autofocus: true,
+                    // Controls touch target size (min area)
+                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    // Duration of shape/color/elevation animations
+                    animationDuration: Duration(milliseconds: 200),
                     // Button Shape
                     //shape: CircleBorder(),
                     // shape: RoundedRectangleBorder(
