@@ -35,30 +35,35 @@ class _Buttons2State extends State<Buttons2> {
       ),
 
       /// Floating Action Button
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          debugPrint('Floating Action Button Pressed..!');
-        },
-        elevation: 8.0,
-        hoverElevation: 50.0,
-        //focusElevation: ,
-        highlightElevation: 16.0,
-        autofocus: true,
-        focusNode: FocusNode(),
-        tooltip: 'Floating Action Button',
-        //shape: ,
-        hoverColor: Colors.purple,
-        focusColor: Colors.blue,
-        splashColor: Colors.white,
-        backgroundColor: Color(0xff00ff87),
-        // Define Tappable area
-        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        enableFeedback: true,
-        mouseCursor: SystemMouseCursors.none,
-        clipBehavior: Clip.none,
-        child: Icon(Icons.add, size: 35, color: Color(0xff0061ff)),
+      floatingActionButton: Align(
+        // (-left_right, -up_down)
+        alignment: Alignment(0.7, 0.7),
+        child: FloatingActionButton(
+          onPressed: () {
+            debugPrint('Floating Action Button Pressed..!');
+          },
+          elevation: 8.0,
+          hoverElevation: 50.0,
+          //focusElevation: ,
+          highlightElevation: 16.0,
+          autofocus: true,
+          focusNode: FocusNode(),
+          tooltip: 'Floating Action Button',
+          //shape: ,
+          hoverColor: Colors.purple,
+          focusColor: Colors.blue,
+          splashColor: Colors.white,
+          backgroundColor: Color(0xff00ff87),
+          // Define Tappable area
+          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          enableFeedback: true,
+          mouseCursor: SystemMouseCursors.none,
+          clipBehavior: Clip.none,
+          child: Icon(Icons.add, size: 35, color: Color(0xff0061ff)),
+        ),
       ),
 
+      //floatingActionButtonLocation: ,
       body: SafeArea(
         child: Center(
           child: Column(
