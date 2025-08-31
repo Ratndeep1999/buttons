@@ -179,7 +179,10 @@ class _Buttons2State extends State<Buttons2> {
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     // Duration of shape/color/elevation animations
                     animationDuration: Duration(milliseconds: 800),
-                    child: Text('RawMaterialButton', style: TextStyle(fontSize: 16.0),),
+                    child: Text(
+                      'RawMaterialButton',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
@@ -220,10 +223,7 @@ class _Buttons2State extends State<Buttons2> {
               /// FilledButton
               Column(
                 children: [
-                  Text(
-                    'Filled Button\'s',
-                    style: TextStyle(fontSize: 20),
-                  ),
+                  Text('Filled Button\'s', style: TextStyle(fontSize: 20)),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.01),
 
                   FilledButton(onPressed: () {}, child: Text('FilledButton')),
@@ -235,11 +235,12 @@ class _Buttons2State extends State<Buttons2> {
                     icon: Icon(Icons.edit),
                     label: Text('Edit'),
                     style: FilledButton.styleFrom(),
-                  )
+                  ),
 
+                  // Customized FilledButton
+                  FilledButton(onPressed: () {}, child: Text('Next')),
                 ],
               ),
-
             ],
           ),
         ),
