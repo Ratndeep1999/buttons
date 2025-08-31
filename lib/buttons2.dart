@@ -153,7 +153,7 @@ class _Buttons2State extends State<Buttons2> {
                     // Controls touch target size (min area)
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     // Duration of shape/color/elevation animations
-                    animationDuration: Duration(milliseconds: 200),
+                    animationDuration: Duration(milliseconds: 800),
                     // Button Shape
                     //shape: CircleBorder(),
                     // shape: RoundedRectangleBorder(
