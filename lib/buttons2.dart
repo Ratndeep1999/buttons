@@ -25,87 +25,93 @@ class _Buttons2State extends State<Buttons2> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              /// Icon Buttons Row
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              /// Icon Buttons Section
+              Column(
                 children: [
-                  // IconButton
-                  IconButton(
-                    onPressed: () {
-                      HapticFeedback.heavyImpact(); // force vibrato on press
-                      debugPrint('Liked..!');
-                    },
-                    onLongPress: () {
-                      debugPrint('Longe Pressed..!');
-                    },
-                    onHover: (isHover) {
-                      debugPrint(isHover ? 'Hovering' : 'Not Hovering');
-                    },
-                    // when pointer appear on button text appear
-                    tooltip: 'Like',
-                    // Color when onPressed is null
-                    disabledColor: Colors.black45,
-                    mouseCursor: SystemMouseCursors.grabbing,
-                    // On web/desktop it remove splash
-                    autofocus: false,
-                    focusNode: FocusNode(),
-                    // This can easily increase or decrease radios of splash
-                    padding: EdgeInsets.all(5.0),
-                    enableFeedback: true,
-                    // Appears when autofocus is true
-                    focusColor: Colors.blue,
-                    // Appear for 1 second when user click
-                    highlightColor: Colors.green,
-                    // Appear on web/desktop when mouse pointer hover on icon
-                    hoverColor: Colors.purple,
-                    iconSize: 40,
-                    icon: Icon(Icons.favorite, color: Colors.red),
-                  ),
+                  Text('Icon Button\'s', style: TextStyle(fontSize: 20)),
+                  SizedBox(height: MediaQuery.of(context).size.height*0.01),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      // IconButton
+                      IconButton(
+                        onPressed: () {
+                          HapticFeedback.heavyImpact(); // force vibrato on press
+                          debugPrint('Liked..!');
+                        },
+                        onLongPress: () {
+                          debugPrint('Longe Pressed..!');
+                        },
+                        onHover: (isHover) {
+                          debugPrint(isHover ? 'Hovering' : 'Not Hovering');
+                        },
+                        // when pointer appear on button text appear
+                        tooltip: 'Like',
+                        // Color when onPressed is null
+                        disabledColor: Colors.black45,
+                        mouseCursor: SystemMouseCursors.grabbing,
+                        // On web/desktop it remove splash
+                        autofocus: false,
+                        focusNode: FocusNode(),
+                        // This can easily increase or decrease radios of splash
+                        padding: EdgeInsets.all(5.0),
+                        enableFeedback: true,
+                        // Appears when autofocus is true
+                        focusColor: Colors.blue,
+                        // Appear for 1 second when user click
+                        highlightColor: Colors.green,
+                        // Appear on web/desktop when mouse pointer hover on icon
+                        hoverColor: Colors.purple,
+                        iconSize: 40,
+                        icon: Icon(Icons.favorite, color: Colors.red),
+                      ),
 
-                  // IconButton with border
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        _thumbLiked = !_thumbLiked;
-                      });
-                    },
-                    icon: Icon(Icons.thumb_up),
-                    tooltip: _thumbLiked ? 'Liked' : 'Click',
-                    color: _thumbLiked
-                        ? Colors.purple.shade500
-                        : Colors.black26,
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    iconSize: 40,
-                    style: IconButton.styleFrom(
-                      side: BorderSide(color: Colors.purple.shade300, width: 3),
-                      padding: EdgeInsets.all(16.0),
-                      backgroundColor: _thumbLiked
-                          ? Colors.purple.withOpacity(0.2)
-                          : Colors.transparent,
-                      // Here also same properties
-                      // hoverColor: Colors.deepOrange
-                    ),
-                  ),
+                      // IconButton with border
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _thumbLiked = !_thumbLiked;
+                          });
+                        },
+                        icon: Icon(Icons.thumb_up),
+                        tooltip: _thumbLiked ? 'Liked' : 'Click',
+                        color: _thumbLiked
+                            ? Colors.purple.shade500
+                            : Colors.black26,
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        iconSize: 40,
+                        style: IconButton.styleFrom(
+                          side: BorderSide(color: Colors.purple.shade300, width: 3),
+                          padding: EdgeInsets.all(16.0),
+                          backgroundColor: _thumbLiked
+                              ? Colors.purple.withOpacity(0.2)
+                              : Colors.transparent,
+                          // Here also same properties
+                          // hoverColor: Colors.deepOrange
+                        ),
+                      ),
 
-                  // ToolTip IconButton
-                  IconButton(
-                    onPressed: () {
-                      // toggle
-                      setState(() {
-                        _isLiked = !(_isLiked);
-                        debugPrint(_isLiked ? 'Clicked' : 'UnClicked');
-                      });
-                    },
-                    icon: Icon(Icons.favorite_border),
-                    // If isSelected is true then icon change to selectedIcon
-                    isSelected: _isLiked,
-                    // This icon appear when isSelected is true
-                    selectedIcon: Icon(Icons.favorite, color: Colors.red),
-                    // 'Like' appear when _isLiked is false
-                    tooltip: _isLiked ? 'Liked' : 'Like',
-                    iconSize: 40,
+                      // ToolTip IconButton
+                      IconButton(
+                        onPressed: () {
+                          // toggle
+                          setState(() {
+                            _isLiked = !(_isLiked);
+                            debugPrint(_isLiked ? 'Clicked' : 'UnClicked');
+                          });
+                        },
+                        icon: Icon(Icons.favorite_border),
+                        // If isSelected is true then icon change to selectedIcon
+                        isSelected: _isLiked,
+                        // This icon appear when isSelected is true
+                        selectedIcon: Icon(Icons.favorite, color: Colors.red),
+                        // 'Like' appear when _isLiked is false
+                        tooltip: _isLiked ? 'Liked' : 'Like',
+                        iconSize: 40,
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -126,6 +132,14 @@ class _Buttons2State extends State<Buttons2> {
                 highlightElevation: 8.0,
                 // when disabled
                 disabledElevation: 0.0,
+                padding: EdgeInsets.all(16),
+                // Button Shape
+                //shape: CircleBorder(),
+                // shape: RoundedRectangleBorder(
+                //   borderRadius: BorderRadius.circular(20),
+                // ),
+
+                child: Text('RawMaterialButton'),
               ),
 
               /// PopUpMenuButton
