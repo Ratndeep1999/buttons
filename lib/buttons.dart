@@ -29,9 +29,8 @@ class Buttons extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-
               /// ElevatedButton
-              buildElevatedButton(context),
+              buildElevatedButton(),
 
               /// Elevated with icon
               ElevatedButton.icon(
@@ -57,7 +56,7 @@ class Buttons extends StatelessWidget {
               ),
 
               /// OutlinedButton
-              buildOutlinedButton(),
+              buildOutlinedButton(context),
 
               /// Outlined with icon
               OutlinedButton.icon(
@@ -112,11 +111,9 @@ class Buttons extends StatelessWidget {
     return OutlinedButton(
       onPressed: () {
         // Navigation of Second Screen
-        Navigator.of(context).push(
-            MaterialPageRoute(
-                builder: (context) => Buttons2(),
-            ),
-        );
+        Navigator.of(
+          context,
+        ).push(MaterialPageRoute(builder: (context) => Buttons2()));
         debugPrint('OutlinedButton');
       },
       onLongPress: () {
@@ -221,7 +218,7 @@ class Buttons extends StatelessWidget {
     );
   }
 
-  ElevatedButton buildElevatedButton(context) {
+  ElevatedButton buildElevatedButton() {
     return ElevatedButton(
       // 1. Callback when tap on button
       onPressed: () {
