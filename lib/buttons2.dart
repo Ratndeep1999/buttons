@@ -1,3 +1,4 @@
+import 'package:buttons/buttons3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -239,7 +240,29 @@ class _Buttons2State extends State<Buttons2> {
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
                   // Customized FilledButton
-                  FilledButton(onPressed: () {}, child: Text('Next')),
+                  FilledButton(
+                    // Single click to Navigate Next Page
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Buttons3()),
+                      );
+                    },
+                    // Long press to Navigate Next Page
+                    onLongPress: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Buttons3()),
+                      );
+                    },
+                    onHover: (isHover) {
+                      debugPrint(isHover ? 'Hovering' : 'Not Hovering');
+                    },
+                    onFocusChange: (isFocused) {
+                      debugPrint(isFocused ? 'Focusing' : 'Un Focusing');
+                    },
+                    autofocus: true,
+                    focusNode: FocusNode(),
+                    child: Text('Next'),
+                  ),
                 ],
               ),
             ],
