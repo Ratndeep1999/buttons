@@ -236,10 +236,10 @@ class _Buttons2State extends State<Buttons2> {
                     label: Text('Edit'),
                     style: FilledButton.styleFrom(),
                   ),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
                   // Customized FilledButton
                   FilledButton(onPressed: () {}, child: Text('Next')),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                 ],
               ),
             ],
