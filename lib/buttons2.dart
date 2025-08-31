@@ -47,7 +47,11 @@ class _Buttons2State extends State<Buttons2> {
                 // This can easily increase or decrease radios of splash
                 padding: EdgeInsets.all(5.0),
                 enableFeedback: true,
-                icon: Icon(Icons.favorite, color: Colors.red, size: 40),
+                focusColor: Colors.blue,
+                // highlightColor: ,
+                // hoverColor: ,
+                iconSize: 40,
+                icon: Icon(Icons.favorite, color: Colors.red),
               ),
 
               /// ToolTip IconButton
@@ -59,17 +63,17 @@ class _Buttons2State extends State<Buttons2> {
                     debugPrint(_isLiked ? 'Clicked' : 'UnClicked');
                   });
                 },
-                icon: Icon(Icons.favorite_border, size: 40,),
+                icon: Icon(Icons.favorite_border),
                 // If isSelected is true then icon change to selectedIcon
                 isSelected: _isLiked,
                 // This icon appear when isSelected is true
                 selectedIcon: Icon(
                   Icons.favorite,
                   color: Colors.red,
-                  size: 40,
                 ),
                 // 'Like' appear when _isLiked is false
-                tooltip: _isLiked ? 'Liked' : 'Like'
+                tooltip: _isLiked ? 'Liked' : 'Like',
+                iconSize: 40,
               ),
 
               /// Raw Material Button
