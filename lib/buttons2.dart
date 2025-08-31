@@ -62,9 +62,9 @@ class _Buttons2State extends State<Buttons2> {
           child: Icon(Icons.add, size: 35, color: Color(0xff0061ff)),
         ),
       ),
-
       // Property to change location of FloatingActionButton
       //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+
       body: SafeArea(
         child: Center(
           child: Column(
@@ -134,7 +134,7 @@ class _Buttons2State extends State<Buttons2> {
                           ),
                           padding: EdgeInsets.all(16.0),
                           backgroundColor: _thumbLiked
-                              ? Colors.purple.withOpacity(0.2)
+                              ? Color(0xffffa585)
                               : Colors.transparent,
                           // Here also same properties
                           // hoverColor: Colors.deepOrange
