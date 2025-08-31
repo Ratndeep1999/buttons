@@ -77,10 +77,10 @@ class _Buttons2State extends State<Buttons2> {
                     hoverColor: Colors.transparent,
                     iconSize: 40,
                     style: IconButton.styleFrom(
-                      side: BorderSide(color: Colors.black26, width: 3),
+                      side: BorderSide(color: Colors.purple.shade100, width: 3),
                       padding: EdgeInsets.all(16.0),
                       backgroundColor: _thumbLiked
-                          ? Colors.purple.withOpacity(0.3)
+                          ? Colors.purple.withOpacity(0.2)
                           : Colors.transparent,
                       // Here also same properties
                       // hoverColor: Colors.deepOrange
