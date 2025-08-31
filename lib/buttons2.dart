@@ -7,29 +7,39 @@ class Buttons2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       /// Floating Action Button
-      floatingActionButton: FloatingActionButton(onPressed: (){}),
+      floatingActionButton: FloatingActionButton(onPressed: () {}),
       body: SafeArea(
+        child: Center(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               /// IconButton
-              IconButton(onPressed: (){}, icon: Icon(Icons.smart_button_outlined)),
+              IconButton(
+                onPressed: () {
+                  debugPrint('Liked..!');
+                },
+                icon: Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                  size: 40,
+                ),
+              ),
 
               /// Raw Material Button
-              RawMaterialButton(onPressed: (){}),
+              RawMaterialButton(onPressed: () {}),
 
               /// PopUpMenuButton
               //PopupMenuButton(itemBuilder: itemBuilder)
 
               /// FilledButton
-              FilledButton(onPressed: (){}, child: Text('FilledButton'))
+              FilledButton(onPressed: () {}, child: Text('FilledButton')),
 
               /// SegmentedButton
               //SegmentedButton(segments: segments, selected: selected)
-
             ],
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
