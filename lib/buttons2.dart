@@ -111,7 +111,22 @@ class _Buttons2State extends State<Buttons2> {
               ),
 
               /// Raw Material Button
-              RawMaterialButton(onPressed: () {}),
+              RawMaterialButton(
+                onPressed: () {
+                  debugPrint('RawMaterial Button..!');
+                },
+                fillColor: Colors.blue,
+                // normal state
+                elevation: 4.0,
+                // when mouse hovers
+                hoverElevation: 6.0,
+                // when focused
+                focusElevation: 6.0,
+                // when pressed
+                highlightElevation: 8.0,
+                // when disabled
+                disabledElevation: 0.0,
+              ),
 
               /// PopUpMenuButton
               //PopupMenuButton(itemBuilder: itemBuilder)
