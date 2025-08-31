@@ -25,10 +25,11 @@ class _Buttons2State extends State<Buttons2> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              /// Icon Buttons Row
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  /// IconButton
+                  // IconButton
                   IconButton(
                     onPressed: () {
                       HapticFeedback.heavyImpact(); // force vibrato on press
@@ -61,7 +62,7 @@ class _Buttons2State extends State<Buttons2> {
                     icon: Icon(Icons.favorite, color: Colors.red),
                   ),
 
-                  /// IconButton with border
+                  // IconButton with border
                   IconButton(
                     onPressed: () {
                       setState(() {
@@ -86,7 +87,7 @@ class _Buttons2State extends State<Buttons2> {
                     ),
                   ),
 
-                  /// ToolTip IconButton
+                  // ToolTip IconButton
                   IconButton(
                     onPressed: () {
                       // toggle
