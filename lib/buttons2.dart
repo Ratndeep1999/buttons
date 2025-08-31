@@ -18,8 +18,24 @@ class _Buttons2State extends State<Buttons2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.teal,
+        title: Text(
+          'Button 2',
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.w400,
+            letterSpacing: 5,
+          ),
+        ),
+        elevation: 8.0,
+        titleSpacing: 2.5,
+        centerTitle: true,
+      ),
+
       /// Floating Action Button
       floatingActionButton: FloatingActionButton(onPressed: () {}),
+
       body: SafeArea(
         child: Center(
           child: Column(
@@ -122,7 +138,10 @@ class _Buttons2State extends State<Buttons2> {
               /// Raw Material Buttons Section
               Column(
                 children: [
-                  Text('Raw Material Button\'s', style: TextStyle(fontSize: 20)),
+                  Text(
+                    'Raw Material Button\'s',
+                    style: TextStyle(fontSize: 20),
+                  ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
                   // Rectangular raw material button
@@ -169,9 +188,10 @@ class _Buttons2State extends State<Buttons2> {
                     onPressed: () {
                       debugPrint("Circular button..!");
                     },
+                    mouseCursor: SystemMouseCursors.noDrop,
                     fillColor: Colors.blue,
                     splashColor: Colors.white,
-                    elevation: 4.0,
+                    elevation: 8.0,
                     shape: CircleBorder(),
                     padding: EdgeInsets.all(20.0),
                     child: Icon(Icons.thumb_up, color: Colors.white),
@@ -182,6 +202,7 @@ class _Buttons2State extends State<Buttons2> {
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
                     fillColor: Colors.red,
+                    elevation: 0.0,
                     // Button Shape
                     //shape: CircleBorder(),
                     shape: RoundedRectangleBorder(
