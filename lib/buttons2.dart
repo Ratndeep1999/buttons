@@ -243,12 +243,14 @@ class _Buttons2State extends State<Buttons2> {
                   FilledButton(
                     // Single click to Navigate Next Page
                     onPressed: () {
+                      HapticFeedback.heavyImpact();
                       Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => Buttons3()),
                       );
                     },
                     // Long press to Navigate Next Page
                     onLongPress: () {
+                      HapticFeedback.heavyImpact();
                       Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => Buttons3()),
                       );
