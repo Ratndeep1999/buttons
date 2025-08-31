@@ -61,6 +61,7 @@ class _Buttons2State extends State<Buttons2> {
                     icon: Icon(Icons.favorite, color: Colors.red),
                   ),
 
+                  /// IconButton with border
                   IconButton(
                     onPressed: () {
                       setState(() {
@@ -70,14 +71,16 @@ class _Buttons2State extends State<Buttons2> {
                     icon: Icon(Icons.thumb_up),
                     tooltip: _thumbLiked ? 'Liked' : 'Click',
                     color: _thumbLiked ? Colors.blue : Colors.black26,
-                    autofocus: true,
-                    focusColor: _thumbLiked
-                        ? Colors.blue.shade100
-                        : Colors.transparent,
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
                     iconSize: 40,
                     style: IconButton.styleFrom(
-                      side: BorderSide(color: Colors.black26, width: 2),
+                      side: BorderSide(color: Colors.black26, width: 3),
                       padding: EdgeInsets.all(16.0),
+                      backgroundColor: _thumbLiked
+                          ? Colors.purple.withOpacity(0.3)
+                          : Colors.transparent,
                       // Here also same properties
                       // hoverColor: Colors.deepOrange
                     ),
