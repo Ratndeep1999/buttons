@@ -217,9 +217,6 @@ class _Buttons2State extends State<Buttons2> {
                 ],
               ),
 
-              /// PopUpMenuButton
-              //PopupMenuButton(itemBuilder: itemBuilder)
-
               /// FilledButton
               Column(
                 children: [
@@ -243,8 +240,6 @@ class _Buttons2State extends State<Buttons2> {
                 ],
               ),
 
-              /// SegmentedButton
-              //SegmentedButton(segments: segments, selected: selected)
             ],
           ),
         ),
