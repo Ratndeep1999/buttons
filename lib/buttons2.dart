@@ -49,9 +49,10 @@ class _Buttons2State extends State<Buttons2> {
                 enableFeedback: true,
                 // Appears when autofocus is true
                 focusColor: Colors.blue,
-                //
+                // Appear for 1 second when user click
                 highlightColor: Colors.green,
-                // hoverColor: ,
+                // Appear on web/desktop when mouse pointer hover on icon
+                hoverColor: Colors.purple,
                 iconSize: 40,
                 icon: Icon(Icons.favorite, color: Colors.red),
               ),
