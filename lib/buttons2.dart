@@ -51,7 +51,7 @@ class _Buttons2State extends State<Buttons2> {
         focusColor: Colors.blue,
         splashColor: Colors.white,
         backgroundColor: Color(0xff00ff87),
-        // Define Capable area
+        // Define Tappable area
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         enableFeedback: true,
         mouseCursor: SystemMouseCursors.none,
