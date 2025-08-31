@@ -135,11 +135,18 @@ class _Buttons2State extends State<Buttons2> {
                     highlightElevation: 8.0,
                     // when disabled
                     disabledElevation: 0.0,
-                    splashColor: Colors.red,      // ripple effect
-                    highlightColor: Colors.green, // when pressed
-                    hoverColor: Colors.orange,    // hover (desktop/web)
-                    focusColor: Colors.purple,    // when focused
-                    padding: EdgeInsets.all(16),
+                    // ripple effect
+                    splashColor: Colors.red,
+                    // when pressed
+                    highlightColor: Colors.green,
+                    // hover (desktop/web)
+                    hoverColor: Colors.orange,
+                    // when focused
+                    focusColor: Colors.purple,
+                    // Inside padding
+                    padding: EdgeInsets.all(16.0),
+                    // Defines cursor style on hover (desktop/web).
+                    mouseCursor: SystemMouseCursors.click,
                     // Button Shape
                     //shape: CircleBorder(),
                     // shape: RoundedRectangleBorder(
@@ -163,7 +170,6 @@ class _Buttons2State extends State<Buttons2> {
                     child: Icon(Icons.thumb_up, color: Colors.white),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height*0.02),
-
 
                 ],
               ),
