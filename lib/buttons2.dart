@@ -227,10 +227,19 @@ class _Buttons2State extends State<Buttons2> {
                     'Filled Button\'s',
                     style: TextStyle(fontSize: 20),
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.01),
 
                   FilledButton(onPressed: () {}, child: Text('FilledButton')),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+
+                  // FilledButton with tonalIcon
+                  FilledButton.tonalIcon(
+                    onPressed: () {},
+                    icon: Icon(Icons.edit),
+                    label: Text('Edit'),
+                    style: FilledButton.styleFrom(),
+                  )
+
                 ],
               ),
 
