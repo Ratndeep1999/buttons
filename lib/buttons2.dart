@@ -179,7 +179,7 @@ class _Buttons2State extends State<Buttons2> {
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     // Duration of shape/color/elevation animations
                     animationDuration: Duration(milliseconds: 800),
-                    child: Text('RawMaterialButton'),
+                    child: Text('RawMaterialButton', style: TextStyle(fontSize: 16.0),),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
