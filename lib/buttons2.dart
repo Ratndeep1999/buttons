@@ -203,6 +203,11 @@ class _Buttons2State extends State<Buttons2> {
                     padding: EdgeInsets.all(16.0),
                     fillColor: Colors.red,
                     elevation: 0.0,
+                    hoverElevation: 8.0,
+                    highlightElevation: 16.0,
+                    hoverColor: Colors.green,
+                    highlightColor: Colors.yellow,
+                    animationDuration: Duration(seconds: 1),
                     // Button Shape
                     //shape: CircleBorder(),
                     shape: RoundedRectangleBorder(
