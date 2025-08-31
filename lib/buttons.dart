@@ -155,7 +155,7 @@ class Buttons extends StatelessWidget {
           letterSpacing: 2.0,
         ),
       ),
-      child: Text('OutlinedButton'),
+      child: Text('Go to Second Screen'),
     );
   }
 
