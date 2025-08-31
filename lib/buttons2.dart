@@ -29,7 +29,7 @@ class _Buttons2State extends State<Buttons2> {
               Column(
                 children: [
                   Text('Icon Button\'s', style: TextStyle(fontSize: 20)),
-                  SizedBox(height: MediaQuery.of(context).size.height*0.02),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -83,7 +83,10 @@ class _Buttons2State extends State<Buttons2> {
                         hoverColor: Colors.transparent,
                         iconSize: 40,
                         style: IconButton.styleFrom(
-                          side: BorderSide(color: Colors.purple.shade300, width: 3),
+                          side: BorderSide(
+                            color: Colors.purple.shade300,
+                            width: 3,
+                          ),
                           padding: EdgeInsets.all(16.0),
                           backgroundColor: _thumbLiked
                               ? Colors.purple.withOpacity(0.2)
@@ -119,6 +122,9 @@ class _Buttons2State extends State<Buttons2> {
               /// Raw Material Buttons Section
               Column(
                 children: [
+                  Text('Raw Material Button\'s'),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+
                   // Rectangular raw material button
                   RawMaterialButton(
                     onPressed: () {
@@ -146,23 +152,17 @@ class _Buttons2State extends State<Buttons2> {
                     // Inside padding
                     padding: EdgeInsets.all(16.0),
                     // Defines cursor style on hover (desktop/web).
-                    mouseCursor: SystemMouseCursors.click,
+                    mouseCursor: SystemMouseCursors.progress,
                     // For keyboard navigation & accessibility
                     focusNode: FocusNode(),
                     autofocus: true,
-                    // Controls touch target size (min area)
+                    // How big the tappable (hit-test) area of a button
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     // Duration of shape/color/elevation animations
                     animationDuration: Duration(milliseconds: 800),
-                    // Button Shape
-                    //shape: CircleBorder(),
-                    // shape: RoundedRectangleBorder(
-                    //   borderRadius: BorderRadius.circular(20),
-                    // ),
                     child: Text('RawMaterialButton'),
                   ),
-
-                  SizedBox(height: MediaQuery.of(context).size.height*0.02),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
                   // Raw material button with icon
                   RawMaterialButton(
@@ -176,8 +176,19 @@ class _Buttons2State extends State<Buttons2> {
                     padding: EdgeInsets.all(20.0),
                     child: Icon(Icons.thumb_up, color: Colors.white),
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height*0.02),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
+                  RawMaterialButton(
+                    onPressed: () {},
+                    padding: EdgeInsets.all(16.0),
+                    fillColor: Colors.red,
+                    // Button Shape
+                    //shape: CircleBorder(),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Text('RawMaterialButton'),
+                  ),
                 ],
               ),
 
