@@ -122,7 +122,7 @@ class _Buttons2State extends State<Buttons2> {
               /// Raw Material Buttons Section
               Column(
                 children: [
-                  Text('Raw Material Button\'s'),
+                  Text('Raw Material Button\'s', style: TextStyle(fontSize: 20)),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
                   // Rectangular raw material button
