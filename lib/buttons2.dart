@@ -26,7 +26,8 @@ class Buttons2 extends StatelessWidget {
                 onHover: (isHover){
                   debugPrint(isHover ? 'Hovering' : 'Not Hovering');
                 },
-                autofocus: true,
+                // On web/desktop it remove splash
+                autofocus: false,
                 //focusNode: FocusNode(),
                 // This can easily increase or decrease radios of splash
                 padding: EdgeInsets.all(5.0),
