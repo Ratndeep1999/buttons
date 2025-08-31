@@ -116,30 +116,53 @@ class _Buttons2State extends State<Buttons2> {
                 ],
               ),
 
-              /// Raw Material Button
-              RawMaterialButton(
-                onPressed: () {
-                  debugPrint('RawMaterial Button..!');
-                },
-                fillColor: Colors.blue,
-                // normal state
-                elevation: 4.0,
-                // when mouse hovers
-                hoverElevation: 6.0,
-                // when focused
-                focusElevation: 6.0,
-                // when pressed
-                highlightElevation: 8.0,
-                // when disabled
-                disabledElevation: 0.0,
-                padding: EdgeInsets.all(16),
-                // Button Shape
-                //shape: CircleBorder(),
-                // shape: RoundedRectangleBorder(
-                //   borderRadius: BorderRadius.circular(20),
-                // ),
+              /// Raw Material Buttons Section
+              Column(
+                children: [
+                  // Rectangular raw material button
+                  RawMaterialButton(
+                    onPressed: () {
+                      debugPrint('RawMaterial Button..!');
+                    },
+                    fillColor: Colors.blue,
+                    // normal state
+                    elevation: 10.0,
+                    // when mouse hovers
+                    hoverElevation: 6.0,
+                    // when focused
+                    focusElevation: 6.0,
+                    // when pressed
+                    highlightElevation: 8.0,
+                    // when disabled
+                    disabledElevation: 0.0,
+                    splashColor: Colors.red,      // ripple effect
+                    highlightColor: Colors.green, // when pressed
+                    hoverColor: Colors.orange,    // hover (desktop/web)
+                    focusColor: Colors.purple,    // when focused
+                    padding: EdgeInsets.all(16),
+                    // Button Shape
+                    //shape: CircleBorder(),
+                    // shape: RoundedRectangleBorder(
+                    //   borderRadius: BorderRadius.circular(20),
+                    // ),
 
-                child: Text('RawMaterialButton'),
+                    child: Text('RawMaterialButton'),
+                  ),
+
+                  // Circular Raw material button
+                  RawMaterialButton(
+                    onPressed: () {
+                      debugPrint("Circular button..!");
+                    },
+                    fillColor: Colors.blue,
+                    splashColor: Colors.white,
+                    elevation: 4.0,
+                    shape: CircleBorder(),
+                    padding: EdgeInsets.all(20.0),
+                    child: Icon(Icons.thumb_up, color: Colors.white),
+                  )
+
+                ],
               ),
 
               /// PopUpMenuButton
