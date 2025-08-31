@@ -1,3 +1,4 @@
+import 'package:buttons/sliding_buttons.dart';
 import 'package:flutter/material.dart';
 import 'buttons.dart';
 import 'buttons2.dart';
