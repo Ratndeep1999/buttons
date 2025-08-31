@@ -239,6 +239,7 @@ class _Buttons2State extends State<Buttons2> {
 
                   // Customized FilledButton
                   FilledButton(onPressed: () {}, child: Text('Next')),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                 ],
               ),
             ],
