@@ -207,7 +207,6 @@ class _Buttons2State extends State<Buttons2> {
                     highlightElevation: 16.0,
                     hoverColor: Colors.green,
                     highlightColor: Colors.yellow,
-                    animationDuration: Duration(seconds: 1),
                     // Button Shape
                     //shape: CircleBorder(),
                     shape: RoundedRectangleBorder(
