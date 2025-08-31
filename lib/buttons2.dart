@@ -64,14 +64,23 @@ class _Buttons2State extends State<Buttons2> {
                   IconButton(
                     onPressed: () {
                       setState(() {
-                        _thumbLiked = !_thumbLiked ;
+                        _thumbLiked = !_thumbLiked;
                       });
                     },
                     icon: Icon(Icons.thumb_up),
-                    style: IconButton.styleFrom(),
                     tooltip: _thumbLiked ? 'Liked' : 'Click',
-                    color: _thumbLiked ? Colors.blue : Colors.black26 ,
+                    color: _thumbLiked ? Colors.blue : Colors.black26,
+                    autofocus: true,
+                    focusColor: _thumbLiked
+                        ? Colors.blue.shade100
+                        : Colors.transparent,
                     iconSize: 40,
+                    style: IconButton.styleFrom(
+                      side: BorderSide(color: Colors.black26, width: 2),
+                      padding: EdgeInsets.all(16.0),
+                      // Here also same properties
+                      // hoverColor: Colors.deepOrange
+                    ),
                   ),
 
                   /// ToolTip IconButton
