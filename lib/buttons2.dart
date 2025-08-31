@@ -29,7 +29,7 @@ class _Buttons2State extends State<Buttons2> {
               Column(
                 children: [
                   Text('Icon Button\'s', style: TextStyle(fontSize: 20)),
-                  SizedBox(height: MediaQuery.of(context).size.height*0.01),
+                  SizedBox(height: MediaQuery.of(context).size.height*0.02),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -145,11 +145,12 @@ class _Buttons2State extends State<Buttons2> {
                     // shape: RoundedRectangleBorder(
                     //   borderRadius: BorderRadius.circular(20),
                     // ),
-
                     child: Text('RawMaterialButton'),
                   ),
 
-                  // Circular Raw material button
+                  SizedBox(height: MediaQuery.of(context).size.height*0.02),
+
+                  // Raw material button with icon
                   RawMaterialButton(
                     onPressed: () {
                       debugPrint("Circular button..!");
@@ -160,7 +161,8 @@ class _Buttons2State extends State<Buttons2> {
                     shape: CircleBorder(),
                     padding: EdgeInsets.all(20.0),
                     child: Icon(Icons.thumb_up, color: Colors.white),
-                  )
+                  ),
+                  SizedBox(height: MediaQuery.of(context).size.height*0.02),
 
                 ],
               ),
