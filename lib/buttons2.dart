@@ -28,6 +28,8 @@ class Buttons2 extends StatelessWidget {
                 },
                 // when pointer appear on button text appear
                 tooltip: 'Like',
+                // Color when onPressed is null
+                disabledColor: Colors.black45,
                 // On web/desktop it remove splash
                 autofocus: false,
                 focusNode: FocusNode(),
