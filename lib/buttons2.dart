@@ -62,8 +62,9 @@ class _Buttons2State extends State<Buttons2> {
           child: Icon(Icons.add, size: 35, color: Color(0xff0061ff)),
         ),
       ),
+      // Property to change location of FloatingActionButton
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
 
-      //floatingActionButtonLocation: ,
       body: SafeArea(
         child: Center(
           child: Column(
