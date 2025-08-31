@@ -301,7 +301,7 @@ class _Buttons2State extends State<Buttons2> {
                         horizontal: 70.0,
                         vertical: 8.0,
                       ),
-                      backgroundColor: Colors.purple.shade500,
+                      backgroundColor: Color(0xffe9b7ce),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(50),
