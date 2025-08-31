@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:slide_to_act/slide_to_act.dart';
+
+import 'buttons2.dart';
 
 class Buttons extends StatelessWidget {
   const Buttons({super.key});
@@ -64,6 +67,35 @@ class Buttons extends StatelessWidget {
                   enabledMouseCursor: SystemMouseCursors.text, // text),
                 ),
               ),
+
+              /// Swipe Button using Package
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: SlideAction(
+                  text: "Go To SecondScreen",
+                  textStyle: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                  outerColor: Colors.green,
+                  innerColor: Colors.white,
+                  elevation: 4,
+                  sliderButtonIcon: Icon(
+                    Icons.lock_open,
+                    // Icons.shopping_cart,
+                    color: Colors.green,
+                  ),
+                  onSubmit: () {
+                    // Navigate after swipe
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Buttons2()),
+                    );
+                    return null;
+                  },
+                ),
+              ),
             ],
           ),
         ),
@@ -73,53 +105,54 @@ class Buttons extends StatelessWidget {
 
   OutlinedButton buildOutlinedButton() {
     return OutlinedButton(
-              onPressed: () {
-                debugPrint('OutlinedButton');
-              },
-              onLongPress: () {
-                debugPrint('Long Pressed..!');
-              },
-              onHover: (isHover) {
-                debugPrint(isHover ? 'Hover' : 'Hover Remover');
-              },
-              onFocusChange: (isFocused) {
-                debugPrint(isFocused ? 'Focused' : 'Unfocused');
-              },
-              // keyboard focus control
-              focusNode: FocusNode(),
-              // button gets focus automatically on screen load
-              autofocus: true,
-              clipBehavior: Clip.antiAlias,
-              style: OutlinedButton.styleFrom(
-                backgroundColor: Colors.transparent,
-                // This never effect border radios
-                side: BorderSide(color: Colors.orangeAccent, width: 3),
-                // This makes border Rectangular
-                shape: RoundedRectangleBorder(),
-                foregroundColor: Colors.deepOrange,
-                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
-                enableFeedback: true,
-                overlayColor: Colors.black,
-                shadowColor: Colors.grey,
-                elevation: 30.0,
-                enabledMouseCursor: SystemMouseCursors.zoomIn,  // text
-                surfaceTintColor: Colors.orange.shade700,
-                // ?
-                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                // maximumSize: ,
-                // minimumSize: ,
-                // I already specify splash color
-                // splashFactory: ,
-                // It gives Fixed size
-                // fixedSize: Size.square(5.0),
-                textStyle: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: 2.0,
-                ),
-              ),
-              child: Text('OutlinedButton'),
-            );
+      onPressed: () {
+        debugPrint('OutlinedButton');
+      },
+      onLongPress: () {
+        debugPrint('Long Pressed..!');
+      },
+      onHover: (isHover) {
+        debugPrint(isHover ? 'Hover' : 'Hover Remover');
+      },
+      onFocusChange: (isFocused) {
+        debugPrint(isFocused ? 'Focused' : 'Unfocused');
+      },
+      // keyboard focus control
+      focusNode: FocusNode(),
+      // button gets focus automatically on screen load
+      autofocus: true,
+      clipBehavior: Clip.antiAlias,
+      style: OutlinedButton.styleFrom(
+        backgroundColor: Colors.transparent,
+        // This never effect border radios
+        side: BorderSide(color: Colors.orangeAccent, width: 3),
+        // This makes border Rectangular
+        shape: RoundedRectangleBorder(),
+        foregroundColor: Colors.deepOrange,
+        padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
+        enableFeedback: true,
+        overlayColor: Colors.black,
+        shadowColor: Colors.grey,
+        elevation: 30.0,
+        enabledMouseCursor: SystemMouseCursors.zoomIn,
+        // text
+        surfaceTintColor: Colors.orange.shade700,
+        // ?
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        // maximumSize: ,
+        // minimumSize: ,
+        // I already specify splash color
+        // splashFactory: ,
+        // It gives Fixed size
+        // fixedSize: Size.square(5.0),
+        textStyle: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w500,
+          letterSpacing: 2.0,
+        ),
+      ),
+      child: Text('OutlinedButton'),
+    );
   }
 
   TextButton buildTextButton() {
