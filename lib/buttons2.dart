@@ -12,6 +12,9 @@ class _Buttons2State extends State<Buttons2> {
   // For toggle Icon button
   bool _isLiked = false;
 
+  // For toggle of thumb like button
+  bool _thumbLiked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,9 +62,15 @@ class _Buttons2State extends State<Buttons2> {
                   ),
 
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        _thumbLiked = !_thumbLiked ;
+                      });
+                    },
                     icon: Icon(Icons.thumb_up),
                     style: IconButton.styleFrom(),
+                    tooltip: _thumbLiked ? 'Liked' : 'Click',
+                    color: _thumbLiked ? Colors.blue : Colors.black26 ,
                     iconSize: 40,
                   ),
 
