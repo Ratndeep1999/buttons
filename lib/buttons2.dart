@@ -62,9 +62,9 @@ class _Buttons2State extends State<Buttons2> {
           child: Icon(Icons.add, size: 35, color: Color(0xff0061ff)),
         ),
       ),
+
       // Property to change location of FloatingActionButton
       //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-
       body: SafeArea(
         child: Center(
           child: Column(
@@ -141,7 +141,7 @@ class _Buttons2State extends State<Buttons2> {
                         ),
                       ),
 
-                      // ToolTip IconButton
+                      // Responsive IconButton
                       IconButton(
                         onPressed: () {
                           // toggle
@@ -158,6 +158,10 @@ class _Buttons2State extends State<Buttons2> {
                         // 'Like' appear when _isLiked is false
                         tooltip: _isLiked ? 'Liked' : 'Like',
                         iconSize: 40,
+                        // Restrict Tappable area
+                        style: IconButton.styleFrom(
+                          tapTargetSize: MaterialTapTargetSize.padded,
+                        ),
                       ),
                     ],
                   ),
