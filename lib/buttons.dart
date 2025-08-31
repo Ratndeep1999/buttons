@@ -69,6 +69,7 @@ class Buttons extends StatelessWidget {
               ),
 
               /// Swipe Button using Package
+              // slide_to_act: ^2.0.2
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: SlideAction(
