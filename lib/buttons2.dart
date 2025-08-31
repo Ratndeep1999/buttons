@@ -239,7 +239,7 @@ class _Buttons2State extends State<Buttons2> {
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
-                  // Customized FilledButton
+                  /// Customized Navigation FilledButton
                   FilledButton(
                     // Single click to Navigate Next Page
                     onPressed: () {
@@ -263,7 +263,24 @@ class _Buttons2State extends State<Buttons2> {
                     },
                     autofocus: true,
                     focusNode: FocusNode(),
-                    child: Text('Next'),
+                    clipBehavior: Clip.none,
+                    style: FilledButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 70.0,
+                        vertical: 8.0,
+                      ),
+                      backgroundColor: Colors.purple.shade500,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(50),
+                          bottomRight: Radius.circular(50),
+                        ),
+                      ),
+                    ),
+                    child: Text(
+                      'Next',
+                      style: TextStyle(fontSize: 22, letterSpacing: 5.0),
+                    ),
                   ),
                 ],
               ),
