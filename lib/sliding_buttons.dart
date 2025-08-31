@@ -56,10 +56,11 @@ class _SlidingButtonsState extends State<SlidingButtons> {
               ),
 
               /// swipeable_button_view
+              // Best for On boarding Screen
               SwipeableButtonView(
                 buttonText: "Go To SecondScreen",
-                buttonWidget: Icon(Icons.arrow_forward, color: Colors.green),
-                activeColor: Colors.green,
+                buttonWidget: Icon(Icons.arrow_forward, color: Colors.purple),
+                activeColor: Colors.purple,
                 isFinished: isFinished,
                 onWaitingProcess: () {
                   Future.delayed(Duration(seconds: 2), () {
