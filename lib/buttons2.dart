@@ -47,8 +47,10 @@ class _Buttons2State extends State<Buttons2> {
                 // This can easily increase or decrease radios of splash
                 padding: EdgeInsets.all(5.0),
                 enableFeedback: true,
+                // Appears when autofocus is true
                 focusColor: Colors.blue,
-                // highlightColor: ,
+                //
+                highlightColor: Colors.green,
                 // hoverColor: ,
                 iconSize: 40,
                 icon: Icon(Icons.favorite, color: Colors.red),
