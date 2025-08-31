@@ -198,6 +198,7 @@ class _Buttons2State extends State<Buttons2> {
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
+                  // Circular rectangular borders
                   RawMaterialButton(
                     onPressed: () {},
                     padding: EdgeInsets.all(16.0),
@@ -220,7 +221,18 @@ class _Buttons2State extends State<Buttons2> {
               //PopupMenuButton(itemBuilder: itemBuilder)
 
               /// FilledButton
-              FilledButton(onPressed: () {}, child: Text('FilledButton')),
+              Column(
+                children: [
+                  Text(
+                    'Filled Button\'s',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+
+                  FilledButton(onPressed: () {}, child: Text('FilledButton')),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                ],
+              ),
 
               /// SegmentedButton
               //SegmentedButton(segments: segments, selected: selected)
