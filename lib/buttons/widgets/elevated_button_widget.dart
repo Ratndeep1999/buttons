@@ -51,11 +51,13 @@ class ElevatedButtonWidget extends StatelessWidget {
           letterSpacing: 2,
         ),
 
-        /// Web/desktop
+        /// Web / desktop
+
+        /// When Enabled
         enabledMouseCursor: SystemMouseCursors.grab,
 
-        /// When enabled
-        disabledMouseCursor: SystemMouseCursors.forbidden, // when disabled
+        /// When Disable
+        disabledMouseCursor: SystemMouseCursors.forbidden,
       ),
       child: Text('ElevatedButton'),
     );
