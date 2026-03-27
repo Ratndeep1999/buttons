@@ -1,10 +1,11 @@
 import 'package:buttons/buttons/widgets/elevated_icon_button_widget.dart';
-import 'package:buttons/buttons2.dart';
-import 'package:buttons/sliding_buttons.dart';
+import 'package:buttons/buttons/widgets/outlined_button_widget.dart';
+import 'package:buttons/buttons/widgets/outlined_icon_button_widget.dart';
+import 'package:buttons/buttons/widgets/slide_to_act_button_widget.dart';
+import 'package:buttons/buttons/widgets/text_button_widget.dart';
+import 'package:buttons/buttons/widgets/text_icon_button_widget.dart';
 import 'package:buttons/utils/constants/text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:slide_to_act/slide_to_act.dart';
 import '../buttons/widgets/elevated_button_widget.dart';
 
 class ButtonScreenOne extends StatelessWidget {
@@ -26,185 +27,30 @@ class ButtonScreenOne extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              /// Elevated Button widget
+              /// Elevated Button Widget
               ElevatedButtonWidget(),
 
               /// Elevated Button With Icon Widget
               ElevatedIconButtonWidget(),
 
-              /// TextButton
-              buildTextButton(),
+              /// Text Button Widget
+              TextButtonWidget(),
 
               /// textButton with Icon
-              TextButton.icon(
-                onPressed: () {},
-                label: Text('Text icon Button'),
-                icon: Icon(Icons.ads_click),
-                style: OutlinedButton.styleFrom(
-                  enabledMouseCursor: SystemMouseCursors.allScroll, // text),
-                ),
-              ),
+              TextIconButtonWidget(),
 
               /// OutlinedButton
-              buildOutlinedButton(context),
+              OutlinedButtonWidget(),
 
               /// Outlined with icon
-              OutlinedButton.icon(
-                onPressed: () {},
-                label: Text('Outlined icon Button'),
-                icon: Icon(Icons.ads_click),
-                style: OutlinedButton.styleFrom(
-                  enabledMouseCursor: SystemMouseCursors.text, // text),
-                ),
-              ),
+              OutlinedIconButtonWidget(),
 
-              /// Swipe Button using Package
-              // slide_to_act: ^2.0.2
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 10,
-                ),
-                child: SlideAction(
-                  text: "Go To Sliding Button Screen",
-                  textStyle: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                  outerColor: Colors.green,
-                  innerColor: Colors.white,
-                  elevation: 4,
-                  sliderButtonIcon: Icon(
-                    Icons.lock_open,
-                    // Icons.shopping_cart,
-                    color: Colors.green,
-                  ),
-                  onSubmit: () {
-                    // Navigate after swipe
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SlidingButtons()),
-                    );
-                    return null;
-                  },
-                ),
-              ),
+              /// Swipe Button using Package slide_to_act: ^2.0.2
+              SlideToActButtonWidget(),
             ],
           ),
         ),
       ),
-    );
-  }
-
-  OutlinedButton buildOutlinedButton(context) {
-    return OutlinedButton(
-      onPressed: () {
-        // Navigation of Second Screen
-        Navigator.of(
-          context,
-        ).push(MaterialPageRoute(builder: (context) => Buttons2()));
-        debugPrint('OutlinedButton');
-      },
-      onLongPress: () {
-        debugPrint('Long Pressed..!');
-      },
-      onHover: (isHover) {
-        debugPrint(isHover ? 'Hover' : 'Hover Remover');
-      },
-      onFocusChange: (isFocused) {
-        debugPrint(isFocused ? 'Focused' : 'Unfocused');
-      },
-      // keyboard focus control
-      focusNode: FocusNode(),
-      // button gets focus automatically on screen load
-      autofocus: true,
-      clipBehavior: Clip.antiAlias,
-      style: OutlinedButton.styleFrom(
-        backgroundColor: Colors.transparent,
-        // This never effect border radios
-        side: BorderSide(color: Colors.orangeAccent, width: 3),
-        // This makes border Rectangular
-        shape: RoundedRectangleBorder(),
-        foregroundColor: Colors.deepOrange,
-        padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
-        enableFeedback: true,
-        overlayColor: Colors.black,
-        shadowColor: Colors.grey,
-        elevation: 30.0,
-        enabledMouseCursor: SystemMouseCursors.zoomIn,
-        // text
-        surfaceTintColor: Colors.orange.shade700,
-        // ?
-        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        // maximumSize: ,
-        // minimumSize: ,
-        // I already specify splash color
-        // splashFactory: ,
-        // It gives Fixed size
-        // fixedSize: Size.square(5.0),
-        textStyle: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-          letterSpacing: 2.0,
-        ),
-      ),
-      child: Text('Go to Second Screen'),
-    );
-  }
-
-  TextButton buildTextButton() {
-    return TextButton(
-      // 1. Callback when tap on button
-      onPressed: () {
-        HapticFeedback.heavyImpact(); // force vibration on press
-        debugPrint('TextButton');
-      },
-      // 2. Callback when longPressed on button
-      onLongPress: () {
-        debugPrint('Long Press..!');
-      },
-      // 3. Callback when mouse enters or leaves the button area (desktop/web).
-      onHover: (isHovering) {
-        debugPrint(isHovering ? "Hovering" : "Not Hovering");
-      },
-      // 4. Callback when the button gains or loses focus.
-      onFocusChange: (isFocused) {
-        debugPrint(isFocused ? "Focused" : "Unfocused");
-      },
-      // For keyboard focus control
-      focusNode: FocusNode(),
-      // If true, button gets focus automatically on screen load.
-      autofocus: true,
-      // Style of text button
-      style: TextButton.styleFrom(
-        // It remover background color
-        backgroundColor: Colors.transparent,
-        // It remover extra surface of button
-        padding: EdgeInsets.all(0.0),
-        // It remover border radius
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0.0)),
-        // It also remove extra surface of button
-        visualDensity: VisualDensity(vertical: 0.0, horizontal: 0.0),
-        // It gives radius (clickable) to the button
-        //fixedSize: Size.fromRadius(50),
-        disabledMouseCursor: SystemMouseCursors.forbidden,
-        // 🚫 cursor
-        enabledMouseCursor: SystemMouseCursors.wait,
-        // like a click sound on web/desktop or haptic vibration on mobile
-        enableFeedback: true,
-        // ❌ no haptic / click sound
-        // controls the color that appears on a button when it is interacted
-        overlayColor: Colors.redAccent,
-        // If you want slower/smoother animations for hover/focus effects on desktop/web.
-        animationDuration: Duration(seconds: 5),
-        textStyle: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.normal,
-          color: Colors.black45,
-        ),
-      ),
-      child: Text('Text Button'),
     );
   }
 }
