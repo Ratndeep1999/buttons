@@ -1,4 +1,4 @@
-import 'package:buttons/sliding_buttons.dart';
+import 'package:buttons/button_screens/sliding_button_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 
@@ -29,7 +29,7 @@ class SlideToActButtonWidget extends StatelessWidget {
         onSubmit: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => SlidingButtons()),
+            MaterialPageRoute(builder: (context) => SlidingButtonScreen()),
           );
           return null;
         },
