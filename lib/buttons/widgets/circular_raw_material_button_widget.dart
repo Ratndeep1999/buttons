@@ -6,17 +6,14 @@ class CircularRawMaterialButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onPressed: () {},
-      padding: EdgeInsets.all(16.0),
-      fillColor: Colors.red,
-      elevation: 0.0,
-      hoverElevation: 8.0,
-      highlightElevation: 16.0,
-      hoverColor: Colors.green,
-      highlightColor: Colors.yellow,
-      // Button Shape
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      child: Text(' Circular RawMaterial Button'),
+      onPressed: () => debugPrint("Circular button..!"),
+      mouseCursor: SystemMouseCursors.noDrop,
+      fillColor: Colors.blue,
+      splashColor: Colors.white,
+      elevation: 8.0,
+      shape: CircleBorder(),
+      padding: EdgeInsets.all(20.0),
+      child: Icon(Icons.thumb_up, color: Colors.white),
     );
   }
 }
