@@ -1,3 +1,4 @@
+import 'package:buttons/buttons/widgets/elevated_icon_button_widget.dart';
 import 'package:buttons/buttons2.dart';
 import 'package:buttons/sliding_buttons.dart';
 import 'package:buttons/utils/constants/text_styles.dart';
@@ -25,18 +26,11 @@ class ButtonScreenOne extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              /// ElevatedButton
+              /// Elevated Button widget
               ElevatedButtonWidget(),
 
-              /// Elevated with icon
-              ElevatedButton.icon(
-                onPressed: () {},
-                label: Text('Elevated icon Button'),
-                icon: Icon(Icons.ads_click),
-                style: OutlinedButton.styleFrom(
-                  enabledMouseCursor: SystemMouseCursors.forbidden, // text),
-                ),
-              ),
+              /// Elevated Button With Icon Widget
+              ElevatedIconButtonWidget(),
 
               /// TextButton
               buildTextButton(),
